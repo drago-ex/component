@@ -14,11 +14,6 @@ use Nette\Application\UI\Presenter;
 use Nette\Bridges\ApplicationLatte\Template;
 
 
-/**
- * @property-read Component $component
- * @property-read ComponentsTemplate $template
- * @property-read Presenter $presenter
- */
 trait Components
 {
 	public const string
@@ -34,27 +29,41 @@ trait Components
 	 */
 	public function getUniqueIdComponent(string $name): string
 	{
-		return $this->component->getUniqueId() . $name;
+		return $this->getUniqueId() . $name;
 	}
+
+
+    private function payloadComponent(string $name, string $component): void
+    {
+        $this->getPresenter()->payload->{$name} = $component;
+    }
 
 
 	/**
 	 * Calls the offcanvas component.
 	 */
-	public function offCanvasComponent(): void
+	public function offCanvasComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Offcanvas);
-		$this->presenter->payload->{self::Offcanvas} = $component;
+		$this->payloadComponent(self::Offcanvas, $component);
+
+        if ($snippet) {
+            $this->redrawControl($snippet);
+        }
 	}
 
 
 	/**
 	 * Calls the modal component.
 	 */
-	public function modalComponent(): void
+	public function modalComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Modal);
-		$this->presenter->payload->{self::Modal} = $component;
+		$this->payloadComponent(self::Modal, $component);
+
+        if ($snippet) {
+            $this->redrawControl($snippet);
+        }
 	}
 
 
@@ -63,7 +72,7 @@ trait Components
 	 */
 	public function closeComponent(): void
 	{
-		$this->presenter->payload
+		$this->getPresenter()->payload
 			->close = 'close';
 	}
 
