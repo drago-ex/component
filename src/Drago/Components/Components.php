@@ -9,8 +9,6 @@ declare(strict_types=1);
 
 namespace Drago\Components;
 
-use Nette\Application\UI\Component;
-use Nette\Application\UI\Presenter;
 use Nette\Bridges\ApplicationLatte\Template;
 
 
