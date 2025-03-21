@@ -70,13 +70,4 @@ trait Components
 		$this->getPresenter()->payload
 			->close = 'close';
 	}
-
-
-	public function defaultTemplate(): Template
-	{
-		$template = $this->template;
-		$template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
-		$template->modalId = $this->getUniqueIdComponent(self::Modal);
-		return $template;
-	}
 }
