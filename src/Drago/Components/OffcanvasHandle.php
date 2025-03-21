@@ -12,7 +12,7 @@ namespace Drago\Components;
 use Nette\Application\Attributes\Requires;
 
 
-interface ComponentsCommands
+interface OffcanvasHandle
 {
     #[Requires(ajax: true)]
     public function handleOpenOffcanvas(): void;
