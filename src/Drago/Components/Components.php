@@ -78,8 +78,8 @@ trait Components
 	public function defaultTemplate(): Template
 	{
 		$template = $this->template;
-		$template->uniqueComponentOffcanvas = $this->getUniqueIdComponent(self::Offcanvas);
-		$template->uniqueComponentModal = $this->getUniqueIdComponent(self::Modal);
+		$template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
+		$template->modalId = $this->getUniqueIdComponent(self::Modal);
 		return $template;
 	}
 }
