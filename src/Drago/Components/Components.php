@@ -21,9 +21,6 @@ trait Components
 
 	/**
 	 * Returns a unique ID for the component.
-	 *
-	 * @param string $name The name to append to the unique ID.
-	 * @return string The unique ID of the component.
 	 */
 	public function getUniqueIdComponent(string $name): string
 	{
@@ -31,10 +28,10 @@ trait Components
 	}
 
 
-    private function payloadComponent(string $name, string $component): void
-    {
-        $this->getPresenter()->payload->{$name} = $component;
-    }
+	private function payloadComponent(string $name, string $component): void
+	{
+		$this->getPresenter()->payload->{$name} = $component;
+	}
 
 
 	/**
@@ -45,9 +42,9 @@ trait Components
 		$component = $this->getUniqueIdComponent(self::Offcanvas);
 		$this->payloadComponent(self::Offcanvas, $component);
 
-        if ($snippet) {
-            $this->redrawControl($snippet);
-        }
+		if ($snippet) {
+			$this->redrawControl($snippet);
+		}
 	}
 
 
@@ -59,9 +56,9 @@ trait Components
 		$component = $this->getUniqueIdComponent(self::Modal);
 		$this->payloadComponent(self::Modal, $component);
 
-        if ($snippet) {
-            $this->redrawControl($snippet);
-        }
+		if ($snippet) {
+			$this->redrawControl($snippet);
+		}
 	}
 
 
