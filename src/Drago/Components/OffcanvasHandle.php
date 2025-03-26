@@ -14,6 +14,6 @@ use Nette\Application\Attributes\Requires;
 
 interface OffcanvasHandle
 {
-    #[Requires(ajax: true)]
-    public function handleOpenOffcanvas(): void;
+	#[Requires(ajax: true)]
+	public function handleOpenOffcanvas(): void;
 }
