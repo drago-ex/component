@@ -18,7 +18,7 @@ composer require drago-ex/components
 ```
 
 ## Usage
-In the 'Control' component we will use Trait Drago\Components\Components
+In the `Control` component we will use Trait `Drago\Components\Components`
 
 Passing variables to the template:
 ```php
@@ -26,7 +26,7 @@ $template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
 $template->modalId = $this->getUniqueIdComponent(self::Modal);
 ```
 
-And according to needs, we can use the implementations 'Drago\Components\ModalHandle' and 'Drago\Components\OffcanvasHandle'
+And according to needs, we can use the implementations `Drago\Components\ModalHandle` and `Drago\Components\OffcanvasHandle`
 ```php
 #[Requires(ajax: true)] public function handleOpenModal(): void
 {
