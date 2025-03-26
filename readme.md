@@ -81,3 +81,6 @@ Next, it is necessary to import javascript to operate the component.
 ```js
 import "../vendor/drago-ex/components/src/Drago/assets/naja.components"
 ```
+
+
+For demonstration, the component is used in the project: https://github.com/drago-ex/project
