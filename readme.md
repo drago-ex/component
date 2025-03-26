@@ -53,10 +53,7 @@ Where do we insert the name of the snippet to override the component or can we w
 
 We will then use the templates of individual components and if we want to redraw multiple blocks, we need to add additional snippets.
 ```latte
-<a n:href="openOffcanvas!" class="ajax" data-naja-history="off">
-	{_'Open Offcanvas'}
-</a>
-
+<a n:href="openOffcanvas!" class="ajax" data-naja-history="off">Open Offcanvas</a>
 {embed '../../../../vendor/drago-ex/components/src/Drago/assets/@offcanvas.latte', offcanvasId: $offcanvasId}
 	{block title}Title{/block}
 	{block body}
@@ -66,10 +63,7 @@ We will then use the templates of individual components and if we want to redraw
 	{/block}
 {/embed}
 
-<a n:href="openModal!" class="ajax" data-naja-history="off">
-	{_'Open Modal'}
-</a>
-
+<a n:href="openModal!" class="ajax" data-naja-history="off">Open Modal</a>
 {embed '../../../../vendor/drago-ex/components/src/Drago/assets/@modal.latte', modalId: $modalId}
 	{block title}Title{/block}
 	{block body}
@@ -78,7 +72,7 @@ We will then use the templates of individual components and if we want to redraw
 		{/snippet}
 	{/block}
 	{block footer}
-		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{_'Close'}</button>
+		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 	{/block}
 {/embed}
 ```
