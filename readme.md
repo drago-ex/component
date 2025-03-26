@@ -21,7 +21,7 @@ composer require drago-ex/components
 In the 'Control' component we will use Trait Drago\Components\Components
 
 Passing variables to the template:
-```latte
+```php
 $template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
 $template->modalId = $this->getUniqueIdComponent(self::Modal);
 ```
