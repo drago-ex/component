@@ -9,8 +9,6 @@ declare(strict_types=1);
 
 namespace Drago\Components;
 
-use Nette\Bridges\ApplicationLatte\Template;
-
 
 trait Components
 {
