@@ -14,6 +14,6 @@ use Nette\Application\Attributes\Requires;
 
 interface ModalHandle
 {
-    #[Requires(ajax: true)]
-    public function handleOpenModal(): void;
+	#[Requires(ajax: true)]
+	public function handleOpenModal(): void;
 }
