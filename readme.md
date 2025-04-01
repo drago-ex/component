@@ -82,5 +82,9 @@ Next, it is necessary to import javascript to operate the component.
 import "../vendor/drago-ex/components/src/Drago/assets/naja.components"
 ```
 
+Copy the Latte templates to your project.
+```
+copy .\vendor\drago-ex\components\src\Drago\assets\latte\* destination
+```
 
 For demonstration, the component is used in the project: https://github.com/drago-ex/project
