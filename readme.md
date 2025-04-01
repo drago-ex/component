@@ -72,7 +72,9 @@ We will then use the templates of individual components and if we want to redraw
 		{/snippet}
 	{/block}
 	{block footer}
-		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+			Close
+		</button>
 	{/block}
 {/embed}
 ```
