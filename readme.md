@@ -54,7 +54,7 @@ Where do we insert the name of the snippet to override the component or can we w
 We will then use the templates of individual components and if we want to redraw multiple blocks, we need to add additional snippets.
 ```latte
 <a n:href="openOffcanvas!" class="ajax" data-naja-history="off">Open Offcanvas</a>
-{embed '../../../../vendor/drago-ex/components/src/Drago/assets/@offcanvas.latte', offcanvasId: $offcanvasId}
+{embed '@offcanvas.latte', offcanvasId: $offcanvasId}
 	{block title}Title{/block}
 	{block body}
 		{snippet offcanvas}
@@ -64,7 +64,7 @@ We will then use the templates of individual components and if we want to redraw
 {/embed}
 
 <a n:href="openModal!" class="ajax" data-naja-history="off">Open Modal</a>
-{embed '../../../../vendor/drago-ex/components/src/Drago/assets/@modal.latte', modalId: $modalId}
+{embed '@modal.latte', modalId: $modalId}
 	{block title}Title{/block}
 	{block body}
 		{snippet modal}
