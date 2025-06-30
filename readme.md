@@ -13,7 +13,7 @@ Bootstrap components such as modal and offcanvas.
 - node.js
 
 ## Installation
-```
+```bash
 composer require drago-ex/components
 ```
 
@@ -54,7 +54,7 @@ Where do we insert the name of the snippet to override the component or can we w
 We will then use the templates of individual components and if we want to redraw multiple blocks, we need to add additional snippets.
 ```latte
 <a n:href="openOffcanvas!" class="ajax" data-naja-history="off">Open Offcanvas</a>
-{embed '@offcanvas.latte', offcanvasId: $offcanvasId}
+{embed 'path/to/@offcanvas.latte', offcanvasId: $offcanvasId}
 	{block title}Title{/block}
 	{block body}
 		{snippet offcanvas}
@@ -64,7 +64,7 @@ We will then use the templates of individual components and if we want to redraw
 {/embed}
 
 <a n:href="openModal!" class="ajax" data-naja-history="off">Open Modal</a>
-{embed '@modal.latte', modalId: $modalId}
+{embed 'path/to/@modal.latte', modalId: $modalId}
 	{block title}Title{/block}
 	{block body}
 		{snippet modal}
@@ -80,12 +80,12 @@ We will then use the templates of individual components and if we want to redraw
 ```
 
 Next, it is necessary to import javascript to operate the component.
-```js
-import "../vendor/drago-ex/components/src/Drago/assets/naja.components"
+```JavaScript
+import "path/to/naja.components"
 ```
 
 Copy the Latte templates to your project.
-```
+```bash
 copy .\vendor\drago-ex\components\src\Drago\assets\latte\* destination
 ```
 
