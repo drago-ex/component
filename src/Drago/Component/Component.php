@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Drago\Components;
+namespace Drago\Component;
 
 
-trait Components
+trait Component
 {
 	public const string
 		Offcanvas = 'offcanvas',

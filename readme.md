@@ -18,7 +18,7 @@ composer require drago-ex/component
 ```
 
 ## Usage
-In the `Control` component we will use Trait `Drago\Components\Components`
+In the `Control` component we will use Trait `Drago\Components\Component`
 
 Passing variables to the template:
 ```php
@@ -26,7 +26,7 @@ $template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
 $template->modalId = $this->getUniqueIdComponent(self::Modal);
 ```
 
-And according to needs, we can use the implementations `Drago\Components\ModalHandle` and `Drago\Components\OffcanvasHandle`
+And according to needs, we can use the implementations `Drago\Component\ModalHandle` and `Drago\Component\OffcanvasHandle`
 ```php
 #[Requires(ajax: true)] public function handleOpenModal(): void
 {
@@ -81,12 +81,12 @@ We will then use the templates of individual components and if we want to redraw
 
 Next, it is necessary to import javascript to operate the component.
 ```JavaScript
-import "path/to/naja.components"
+import "path/to/naja.component"
 ```
 
 Copy the Latte templates to your project.
 ```bash
-copy .\vendor\drago-ex\components\src\Drago\assets\latte\* destination
+copy .\vendor\drago-ex\component\src\Drago\assets\latte\* destination
 ```
 
 For demonstration, the component is used in the project: https://github.com/drago-ex/project
