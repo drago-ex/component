@@ -1,5 +1,5 @@
 {
-	"name": "drago-ex/components",
+	"name": "drago-ex/component",
 	"type": "library",
 	"description": "Bootstrap components such as modal and offcanvas.",
 	"license": ["MIT"],
