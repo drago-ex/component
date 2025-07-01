@@ -14,7 +14,7 @@ Bootstrap components such as modal and offcanvas.
 
 ## Installation
 ```bash
-composer require drago-ex/components
+composer require drago-ex/component
 ```
 
 ## Usage
