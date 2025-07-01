@@ -1,5 +1,5 @@
 
-## Drago Components
+## Drago Component
 Bootstrap components such as modal and offcanvas.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/drago-ex/components/master/license.md)
