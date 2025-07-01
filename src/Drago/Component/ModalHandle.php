@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Drago\Components;
+namespace Drago\Component;
 
 use Nette\Application\Attributes\Requires;
 
