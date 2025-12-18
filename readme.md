@@ -84,4 +84,4 @@ Next, it is necessary to import javascript to operate the component.
 import BootstrapComponents from 'path/to/naja.component';
 ```
 
-Copy the Latte templates to your project.
+Copy the Latte templates from assets to your project.
