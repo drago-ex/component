@@ -1,4 +1,11 @@
 {
+  "name": "drago-component",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+	".": "./src/Drago/assets/index.js",
+	"./naja.component": "./src/Drago/assets/naja.component.js"
+  },
   "devDependencies": {
 	"bootstrap": "^5.3.3",
 	"naja": "^3.2.1"

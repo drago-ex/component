@@ -81,7 +81,7 @@ We will then use the templates of individual components and if we want to redraw
 
 Next, it is necessary to import javascript to operate the component.
 ```JavaScript
-import "path/to/naja.component"
+import BootstrapComponents from 'path/to/naja.component"';
 ```
 
 Copy the Latte templates to your project.
