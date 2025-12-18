@@ -85,8 +85,3 @@ import BootstrapComponents from 'path/to/naja.component"';
 ```
 
 Copy the Latte templates to your project.
-```bash
-copy .\vendor\drago-ex\component\src\Drago\assets\latte\* destination
-```
-
-For demonstration, the component is used in the project: https://github.com/drago-ex/project
