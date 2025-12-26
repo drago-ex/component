@@ -1,6 +1,6 @@
 {* https://getbootstrap.com/docs/5.3/components/modal/ *}
 {varType string $modalId}
-{var $modalAttrs = [
+{do $modalAttrs = [
 	'class' => 'modal fade',
 	'id' => $modalId,
 	'data-bs-backdrop' => 'static',
@@ -10,7 +10,7 @@
 	'aria-hidden' => 'true',
 ]}
 
-{var $modalCloseBtnAttrs = [
+{do $modalCloseBtnAttrs = [
 	'type' => 'button',
 	'class' => 'btn-close',
 	'data-bs-dismiss' => 'modal',
