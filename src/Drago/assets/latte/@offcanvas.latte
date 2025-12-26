@@ -1,13 +1,13 @@
 {* https://getbootstrap.com/docs/5.3/components/offcanvas/ *}
 {varType string $offcanvasId}
-{var $offcanvasAttrs = [
+{do $offcanvasAttrs = [
 	'class' => 'offcanvas offcanvas-end',
 	'tabindex' => '-1',
 	'id' => $offcanvasId,
 	'aria-labelledby' => 'offcanvasRightLabel',
 ]}
 
-{var $closeBtnAttrs = [
+{do $closeBtnAttrs = [
 	'type' => 'button',
 	'class' => 'btn-close text-reset',
 	'data-bs-dismiss' => 'offcanvas',
