@@ -11,6 +11,8 @@ Bootstrap components such as modal and offcanvas.
 - PHP 8.3 or higher
 - Nette Framework
 - Composer
+- Bootstrap
+- Naja
 - Node.js
 
 ## Installation
