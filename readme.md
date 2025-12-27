@@ -7,10 +7,11 @@ Bootstrap components such as modal and offcanvas.
 [![Coding Style](https://github.com/drago-ex/components/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/components/actions/workflows/coding-style.yml)
 
 
-## Technology
+## Requirements
 - PHP 8.3 or higher
-- composer
-- node.js
+- Nette Framework
+- Composer
+- Node.js
 
 ## Installation
 ```bash
