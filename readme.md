@@ -8,7 +8,7 @@ Bootstrap components such as modal and offcanvas.
 
 
 ## Requirements
-- PHP 8.3 or higher
+- PHP >= 8.3
 - Nette Framework
 - Composer
 - Bootstrap
