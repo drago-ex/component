@@ -2,9 +2,9 @@
 ## Drago Component
 Bootstrap components such as modal and offcanvas.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/drago-ex/components/master/license.md)
-[![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponents.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponents)
-[![Coding Style](https://github.com/drago-ex/components/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/components/actions/workflows/coding-style.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/drago-ex/component/master/license.md)
+[![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
+[![Coding Style](https://github.com/drago-ex/component/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/component/actions/workflows/coding-style.yml)
 
 
 ## Requirements
