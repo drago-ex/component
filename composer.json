@@ -22,6 +22,15 @@
 	"autoload": {
 		"classmap": ["src/"]
 	},
+	"extra": {
+		"drago-project": {
+			"install": {
+				"copy": {
+					"src/Drago/assets/latte": "app/Core/Widget"
+				}
+			}
+		}
+	},
 	"scripts": {
 		"phpstan": "phpstan analyse --level 5 --configuration tests/phpstan.neon src"
 	}
