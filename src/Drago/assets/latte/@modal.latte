@@ -1,5 +1,6 @@
 {* https://getbootstrap.com/docs/5.3/components/modal/ *}
 {varType string $modalId}
+{varType string $modalSize}
 {do $modalAttrs = [
 	'class' => 'modal fade',
 	'id' => $modalId,
@@ -17,7 +18,7 @@
 ]}
 
 <div n:attr="$modalAttrs">
-	<div class="modal-dialog">
+	<div n:class="modal-dialog, $modalSize ?? null">
 		<div class="modal-content">
 
 			<div class="modal-header">
