@@ -11,7 +11,7 @@
 ]}
 
 {if !empty($options['size'])}
-	{do $offcanvasAttrs['style'] = [offCanvasSize($options)]}
+	{do $offcanvasAttrs['style'] = 'width: ' . $options['size']]}
 {/if}
 
 {do $closeBtnAttrs = [
