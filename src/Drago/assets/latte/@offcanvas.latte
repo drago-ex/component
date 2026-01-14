@@ -1,11 +1,16 @@
 {* https://getbootstrap.com/docs/5.3/components/offcanvas/ *}
 {varType string $offcanvasId}
+{varType string $size}
 {do $offcanvasAttrs = [
 	'class' => 'offcanvas offcanvas-end',
 	'tabindex' => '-1',
 	'id' => $offcanvasId,
 	'aria-labelledby' => 'offcanvasRightLabel',
 ]}
+
+{ifset $size}
+	{do $offcanvasAttrs['style'] = "width: {$size}"}
+{/ifset}
 
 {do $closeBtnAttrs = [
 	'type' => 'button',
