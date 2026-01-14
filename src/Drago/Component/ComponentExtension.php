@@ -9,9 +9,6 @@ use Latte\Extension;
 
 class ComponentExtension extends Extension
 {
-	private const array OffCanvasSize = [
-		'sm', 'md', 'lg', 'xl', 'xxl',
-	];
 	private const array OffCanvasPosition = [
 		'start', 'end', 'top', 'bottom',
 	];
@@ -28,25 +25,29 @@ class ComponentExtension extends Extension
 	{
 		return [
 			'offCanvasClass' => [$this, 'offCanvasClass'],
+			'offCanvasSize' => [$this, 'offCanvasSize'],
 			'modalDialogClass' => [$this, 'modalDialogClass'],
 		];
 	}
 
 
-	// Offcanvas
+	// Offcanvas position
 	public function offCanvasClass(array $options = []): array
 	{
 		$class = ['offcanvas'];
 
-		if (!empty($options['size']) && in_array($options['size'], self::OffCanvasSize, true)) {
-			$class[] = "offcanvas-{$options['size']}";
-		}
-
-		if (!empty($options['position']) && in_array($options['position'], self::OffCanvasPosition, true)) {
-			$class[] = "offcanvas-{$options['position']}";
+		if (!empty($options['position'])) {
+			$class[] = 'offcanvas-' . $options['position'];
 		}
 
 		return $class;
+	}
+
+
+	// Offcanvas style width
+	public function offCanvasSize(array $options = []): ?string
+	{
+		return !empty($options['size']) ? "width: {$options['size']}" : null;
 	}
 
 
