@@ -4,20 +4,18 @@
 {default $options = []}
 
 {do $labelId = $offcanvasId . '-label'}
-{do
-	$offcanvasAttrs = [
-		'tabindex' => '-1',
-		'id' => $offcanvasId,
-		'aria-labelledby' => $labelId,
-	]
+{do $offcanvasAttrs = [
+	'tabindex' => '-1',
+	'id' => $offcanvasId,
+	'aria-labelledby' => $labelId,
+]}
 
-	$closeBtnAttrs = [
-		'type' => 'button',
-		'class' => 'btn-close text-reset',
-		'data-bs-dismiss' => 'offcanvas',
-		'aria-label' => 'Close',
-	]
-}
+{do $closeBtnAttrs = [
+	'type' => 'button',
+	'class' => 'btn-close text-reset',
+	'data-bs-dismiss' => 'offcanvas',
+	'aria-label' => 'Close',
+]}
 
 <div n:class="...offCanvasClass($options)" n:attr="$offcanvasAttrs">
 
