@@ -16,6 +16,7 @@ class ComponentExtension extends Extension
 	private const array ModalSize = [
 		'sm', 'lg', 'xl',
 	];
+
 	private const array ModalFullscreen = [
 		'sm', 'md', 'lg', 'xl', 'xxl',
 	];
@@ -25,7 +26,6 @@ class ComponentExtension extends Extension
 	{
 		return [
 			'offCanvasClass' => [$this, 'offCanvasClass'],
-			'offCanvasSize' => [$this, 'offCanvasSize'],
 			'modalDialogClass' => [$this, 'modalDialogClass'],
 		];
 	}
@@ -47,7 +47,7 @@ class ComponentExtension extends Extension
 	// Offcanvas style width
 	public function offCanvasSize(array $options = []): ?string
 	{
-		return !empty($options['size']) ? "width: {$options['size']}" : null;
+		return !empty($options['size']) ? "{$options['size']}" : null;
 	}
 
 
