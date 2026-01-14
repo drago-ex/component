@@ -12,7 +12,7 @@
 	"require": {
 		"php": ">=8.3 <9",
 		"nette/application": "^3.1",
-	  	"latte/latte": "^3.1"
+		"latte/latte": "^3.1"
 	},
 	"require-dev": {
 		"tracy/tracy": "^2.10",
