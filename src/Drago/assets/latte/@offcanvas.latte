@@ -10,6 +10,10 @@
 	'aria-labelledby' => $labelId,
 ]}
 
+{if !empty($options['size'])}
+	{do $offcanvasAttrs['style'] = [offCanvasSize($options)]}
+{/if}
+
 {do $closeBtnAttrs = [
 	'type' => 'button',
 	'class' => 'btn-close text-reset',
