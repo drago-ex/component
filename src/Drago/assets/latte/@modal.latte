@@ -1,23 +1,32 @@
 {* https://getbootstrap.com/docs/5.3/components/modal/ *}
 {varType string $modalId}
-{varType array|null $dialog}
-{default $dialog = []}
 
-{do $closeBtnAttrs = [
-	'type' => 'button',
-	'class' => 'btn-close text-reset',
-	'data-bs-dismiss' => 'modal',
-	'aria-label' => 'Close',
+{do $labelId = $modalId . 'Label'}
+{do $modalAttrs = [
+	'class' => 'modal fade',
+	'id' => $modalId,
+	'tabindex' => '-1',
+	'aria-labelledby' => $labelId,
+	'aria-hidden' => 'true',
+	'data-bs-backdrop' => 'static',
+	'data-bs-keyboard' => 'false',
+	'data-bs-theme' => 'light'
 ]}
 
-<div class="modal fade" id="{$modalId}" tabindex="-1" aria-hidden="true">
+{do $modalCloseBtnAttrs = [
+	'type' => 'button',
+	'class' => 'btn-close',
+	'data-bs-dismiss' => 'modal',
+	'aria-label' => 'Close'
+]}
 
-	<div n:class="...modalDialogClass($dialog)">
+<div n:attr="$modalAttrs">
+	<div class="modal-dialog">
 		<div class="modal-content">
 
 			<div class="modal-header">
-				<h5 class="modal-title">{block title}{/block}</h5>
-				<button n:attr="$closeBtnAttrs"></button>
+				<h1 class="modal-title fs-5" id="{$labelId}">{block title}{/block}</h1>
+				<button n:attr="$modalCloseBtnAttrs"></button>
 			</div>
 
 			<div class="modal-body">{block body}{/block}</div>
