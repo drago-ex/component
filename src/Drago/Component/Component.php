@@ -13,8 +13,8 @@ namespace Drago\Component;
 trait Component
 {
 	public const string
-		Offcanvas = 'Offcanvas',
-		Modal = 'Modal';
+		Offcanvas = 'offcanvas',
+		Modal = 'modal';
 
 
 	/**
