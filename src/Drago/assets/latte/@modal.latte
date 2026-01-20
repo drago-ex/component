@@ -1,5 +1,6 @@
 {* https://getbootstrap.com/docs/5.3/components/modal/ *}
 {varType string $modalId}
+{varType array $options}
 {do $labelId = $modalId . 'Label'}
 {do $modalAttrs = [
 	'class' => 'modal fade',
@@ -19,11 +20,19 @@
 	'aria-label' => 'Close'
 ]}
 
+{do $headerTheme = $options['header'] ?? 'none'}
+{do $headerThemes = [
+	'danger' => 'bg-danger text-white',
+	'primary' => 'bg-primary text-white',
+	'success' => 'bg-success text-white',
+	'none' => null
+]}
+
 <div n:attr="$modalAttrs">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
-			<div class="modal-header">
+			<div n:class="modal-header, $headerThemes[$headerTheme]">
 				<h1 class="modal-title fs-5" id="{$labelId}">{block title}{/block}</h1>
 				<button n:attr="$modalCloseBtnAttrs"></button>
 			</div>
