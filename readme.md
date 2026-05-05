@@ -82,7 +82,8 @@ We will then use the templates of individual components and if we want to redraw
 {/embed}
 ```
 
-Next, it is necessary to import javascript to operate the component. First, add the package to your `package.json`:
+## JavaScript setup
+Since the package is installed via Composer, add the following to your `package.json` to make the `drago-component` alias available in your bundler:
 ```json
 {
   "type": "module",
@@ -91,6 +92,7 @@ Next, it is necessary to import javascript to operate the component. First, add 
   }
 }
 ```
+Then run `npm install`.
 
 ```JavaScript
 import BootstrapComponents from 'drago-component/bootstrap-component';
