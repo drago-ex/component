@@ -82,9 +82,18 @@ We will then use the templates of individual components and if we want to redraw
 {/embed}
 ```
 
-Next, it is necessary to import javascript to operate the component.
+Next, it is necessary to import javascript to operate the component. First, add the package to your `package.json`:
+```json
+{
+  "type": "module",
+  "dependencies": {
+    "drago-component": "file:vendor/drago-ex/component"
+  }
+}
+```
+
 ```JavaScript
-import BootstrapComponents from 'path/to/naja.component';
+import BootstrapComponents from 'drago-component/bootstrap-component';
 ```
 
 Copy the Latte templates from assets to your project.

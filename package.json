@@ -4,7 +4,11 @@
   "type": "module",
   "exports": {
 	".": "./src/Drago/assets/index.js",
-	"./naja.component": "./src/Drago/assets/naja.component.js"
+	"./bootstrap-component": "./src/Drago/assets/bootstrap-component.js"
+  },
+  "peerDependencies": {
+	"bootstrap": ">=5.0.0",
+	"naja": ">=3.0.0"
   },
   "devDependencies": {
 	"bootstrap": "^5.3.3",
