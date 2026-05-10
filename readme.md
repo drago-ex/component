@@ -1,11 +1,10 @@
+# Drago Component
 
-## Drago Component
 Bootstrap components such as modal and offcanvas.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/drago-ex/component/main/license)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
 [![Coding Style](https://github.com/drago-ex/component/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/component/actions/workflows/coding-style.yml)
-
 
 ## Requirements
 - PHP >= 8.3
@@ -20,7 +19,7 @@ Bootstrap components such as modal and offcanvas.
 composer require drago-ex/component
 ```
 
-## Usage
+## Examples
 In the `Control` component we will use Trait `Drago\Components\Component`
 
 Passing variables to the template:
