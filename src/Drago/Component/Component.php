@@ -1,15 +1,13 @@
 <?php
 
-/**
- * Drago Extension
- * Package built on Nette Framework
- */
-
 declare(strict_types=1);
 
 namespace Drago\Component;
 
 
+/**
+ * Bootstrap components such as modal and offcanvas.
+ */
 trait Component
 {
 	public const string
@@ -23,12 +21,6 @@ trait Component
 	public function getUniqueIdComponent(string $name): string
 	{
 		return $this->getUniqueId() . $name;
-	}
-
-
-	private function payloadComponent(string $name, string $component): void
-	{
-		$this->getPresenter()->payload->{$name} = $component;
 	}
 
 
@@ -65,7 +57,12 @@ trait Component
 	 */
 	public function closeComponent(): void
 	{
-		$this->getPresenter()->payload
-			->close = 'close';
+		$this->getPresenter()->payload->close = 'close';
+	}
+
+
+	private function payloadComponent(string $name, string $component): void
+	{
+		$this->getPresenter()->payload->{$name} = $component;
 	}
 }
