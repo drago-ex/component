@@ -19,6 +19,10 @@ Bootstrap components such as modal and offcanvas.
 composer require drago-ex/component
 ```
 
+## Project files
+The package has `extra.drago-project.skip` set to `false`, so `drago-install` copies the configured files automatically.
+If `skip` is set to `true`, copy those files manually according to the `copy` section in `composer.json`.
+
 ## Examples
 In the `Control` component we will use Trait `Drago\Components\Component`
 
@@ -96,5 +100,3 @@ Then run `npm install`.
 ```JavaScript
 import BootstrapComponents from 'drago-component/bootstrap-component';
 ```
-
-Copy the Latte templates from assets to your project.
