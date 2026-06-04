@@ -25,7 +25,7 @@
 		"classmap": ["src/"]
 	},
 	"extra": {
-		"drago-project": {
+		"drago-tools": {
 			"install": {
 				"copy": {
 					"src/Drago/assets/latte": "app/Core/Widget"
