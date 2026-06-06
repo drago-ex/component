@@ -6,7 +6,6 @@
 	'tabindex' => '-1',
 	'id' => $offcanvasId,
 	'aria-labelledby' => $labelId,
-	'data-bs-theme' => 'light',
 	'style' => 'width: 61rem',
 ]}
 
@@ -18,7 +17,7 @@
 
 <div n:attr="$offcanvasAttrs">
 
-	<div class="offcanvas-header bg-light">
+	<div class="offcanvas-header bg-body-tertiary">
 		<h5 id="{$labelId}">{block title}{/block}</h5>
 		<button n:attr="$closeBtnAttrs" aria-label="{_'Close'}"></button>
 	</div>
