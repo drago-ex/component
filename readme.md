@@ -26,7 +26,7 @@ in this package's `composer.json`. To skip this package, set `"skip": true` unde
 `extra.drago-tools.packages.<package-name>` in your root `composer.json`.
 
 ## Examples
-In the `Control` component we will use Trait `Drago\Components\Component`
+In the `Control` component, use the `Drago\Component\Component` trait.
 
 Passing variables to the template:
 ```php
@@ -34,7 +34,7 @@ $template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
 $template->modalId = $this->getUniqueIdComponent(self::Modal);
 ```
 
-And according to needs, we can use the implementations `Drago\Component\ModalHandle` and `Drago\Component\OffcanvasHandle`
+You can then use the `Drago\Component\ModalHandle` and `Drago\Component\OffcanvasHandle` implementations:
 ```php
 #[Requires(ajax: true)] public function handleOpenModal(): void
 {
@@ -49,7 +49,7 @@ And according to needs, we can use the implementations `Drago\Component\ModalHan
 ```
 
 
-Where do we insert the name of the snippet to override the component or can we write our own snippet handler and wrap the appropriate component in it.
+You can pass the snippet name that should be redrawn, or create your own signal handler and redraw the related snippet manually.
 
 ```php
 #[Requires(ajax: true)] public function handleOpenModalWindow(): void
@@ -59,7 +59,7 @@ Where do we insert the name of the snippet to override the component or can we w
 }
 ```
 
-We will then use the templates of individual components and if we want to redraw multiple blocks, we need to add additional snippets.
+Use the component templates in Latte. If you need to redraw multiple blocks, add additional snippets inside the embedded template.
 ```latte
 <a n:href="openOffcanvas!" class="ajax" data-naja-history="off">Open Offcanvas</a>
 {embed 'path/to/@offcanvas.latte', offcanvasId: $offcanvasId}
