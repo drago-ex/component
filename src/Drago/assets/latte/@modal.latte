@@ -14,7 +14,6 @@
 
 {do $modalCloseBtnAttrs = [
 	'type' => 'button',
-	'class' => 'btn-close',
 	'data-bs-dismiss' => 'modal',
 ]}
 
@@ -32,7 +31,7 @@
 
 			<div n:class="modal-header, $headerThemes[$headerTheme]">
 				<h1 class="modal-title fs-5" id="{$labelId}">{block title}{/block}</h1>
-				<button n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
+				<button n:class="'btn-close', $headerTheme !== 'none' ? 'btn-close-white'" n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
 			</div>
 
 			<div class="modal-body">{block body}{/block}</div>
