@@ -81,7 +81,7 @@ Use the component templates in Latte. If you need to redraw multiple blocks, add
 	{/block}
 	{block footer}
 		{import 'path/to/@dismiss-button.latte'}
-		{include buttonDismiss, type: 'offcanvas'}
+		{include buttonDismiss, type: 'modal'}
 	{/block}
 {/embed}
 ```
