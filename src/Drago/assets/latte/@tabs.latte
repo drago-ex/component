@@ -1,0 +1,61 @@
+{varType array $tabs}
+{default ?string $active = null}
+{default ?string $class = null}
+{default ?string $headerClass = null}
+{default ?string $contentClass = null}
+{do $activeTab = $active ?? ($tabs[0]['id'] ?? null)}
+
+<div n:class="$class">
+	<div n:class="'app-tabs', $headerClass">
+		<ul class="nav nav-tabs" role="tablist">
+			{foreach $tabs as $tab}
+				{do $isActive = $tab['id'] === $activeTab}
+				{do $tabId = $tab['id']}
+				{do $tabIdPane = $tabId . '-pane'}
+				{do $tabButtonAttrs = [
+					'id' => $tabId . '-tab',
+					'data-bs-toggle' => 'tab',
+					'data-bs-target' => '#' . $tabIdPane,
+					'type' => 'button',
+					'role' => 'tab',
+					'aria-controls' => $tabIdPane,
+					'aria-selected' => $isActive ? 'true' : 'false',
+				]}
+				<li class="nav-item" role="presentation">
+					<button n:attr="$tabButtonAttrs" n:class="'nav-link', $isActive ? active">
+						{_$tab['label']}
+					</button>
+				</li>
+			{/foreach}
+		</ul>
+	</div>
+
+	<div n:class="'tab-content', $contentClass">
+		{foreach $tabs as $tab}
+			{do $isActive = $tab['id'] === $activeTab}
+			{do $tabId = $tab['id']}
+			{do $tabPaneAttrs = [
+				'id' => $tabId . '-pane',
+				'role' => 'tabpanel',
+				'aria-labelledby' => $tabId . '-tab',
+				'tabindex' => '0',
+			]}
+			<div n:attr="$tabPaneAttrs" n:class="'tab-pane fade', $isActive ? 'show active', $tab['class'] ?? null">
+				<div n:if="isset($tab['heading']) || isset($tab['description'])" class="mb-4">
+					{include heading, heading: $tab['heading'] ?? null, class: $tab['headingClass'] ?? null}
+					{include description, description: $tab['description'] ?? null, class: $tab['descriptionClass'] ?? null}
+				</div>
+
+				{include block $tab['block']}
+			</div>
+		{/foreach}
+	</div>
+</div>
+
+{define heading, ?string $heading, ?string $class = null}
+	<h2 n:if="$heading" n:class="'h5 mb-1', $class">{_$heading}</h2>
+{/define}
+
+{define description, ?string $description, ?string $class = null}
+	<p n:if="$description" n:class="'text-body-secondary mb-0', $class">{_$description}</p>
+{/define}

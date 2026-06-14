@@ -4,8 +4,11 @@
   "type": "module",
   "exports": {
 	".": "./src/Drago/assets/index.js",
-	"./bootstrap-component": "./src/Drago/assets/bootstrap-component.js"
+	"./bootstrap-component": "./src/Drago/assets/bootstrap-component.js",
+	"./dropdown": "./src/Drago/assets/dropdown.js",
+	"./styles/dropdown": "./src/Drago/assets/dropdown.scss"
   },
+  "sideEffects": ["**/*.scss"],
   "peerDependencies": {
 	"bootstrap": ">=5.0.0",
 	"naja": ">=3.0.0"

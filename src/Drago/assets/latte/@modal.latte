@@ -1,6 +1,6 @@
 {* https://getbootstrap.com/docs/5.3/components/modal/ *}
 {varType string $modalId}
-{varType array $options}
+{default array $options = []}
 {do $labelId = $modalId . 'Label'}
 {do $modalAttrs = [
 	'class' => 'modal fade',
@@ -24,6 +24,8 @@
 	'success' => 'bg-success text-white',
 	'none' => null,
 ]}
+
+{do $headerTheme = isset($headerThemes[$headerTheme]) ? $headerTheme : 'none'}
 
 <div n:attr="$modalAttrs">
 	<div class="modal-dialog">

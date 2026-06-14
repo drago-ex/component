@@ -1,6 +1,6 @@
 # Drago Component
 
-Bootstrap components such as modal and offcanvas.
+Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
@@ -25,7 +25,7 @@ which must be installed in your project. Without it, copy the files manually acc
 in this package's `composer.json`. To skip this package, set `"skip": true` under
 `extra.drago-tools.packages.<package-name>` in your root `composer.json`.
 
-## Examples
+## Modal and offcanvas
 In the `Control` component, use the `Drago\Component\Component` trait.
 
 Passing variables to the template:
@@ -101,3 +101,96 @@ Then run `npm install`.
 ```JavaScript
 import BootstrapComponents from 'drago-component/bootstrap-component';
 ```
+
+## Dropdown widget
+The dropdown widget is a small Latte wrapper for Bootstrap-like dropdown menus. It is useful for compact
+navigation actions, language switchers, user menus, or theme controls.
+
+Import the JavaScript initializer and SCSS in your frontend entry point:
+```JavaScript
+import { initAppDropdowns } from 'drago-component/dropdown';
+import 'drago-component/styles/dropdown';
+
+initAppDropdowns();
+```
+
+You can also import it from the main package entry:
+```JavaScript
+import { initAppDropdowns } from 'drago-component';
+```
+
+Use the widget in Latte:
+```latte
+{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', end: true}
+	{block menu}
+		{include item, name: 'Homepage', link: ':Front:Home:'}
+		{include item, name: 'Administration', link: 'Admin:'}
+		{include divider}
+		{include item, name: 'Sign out', link: 'Sign:out'}
+	{/block}
+{/embed}
+```
+
+Available parameters:
+- `name`: dropdown toggle label.
+- `icon`: optional Font Awesome icon class.
+- `class`: optional class added to the dropdown wrapper.
+- `end`: aligns the dropdown menu to the right.
+
+The widget provides helper blocks:
+- `item`: renders a translated dropdown link.
+- `divider`: renders a dropdown divider.
+
+## Tabs widget
+The tabs widget renders Bootstrap tabs from a small configuration array and keeps the content blocks in the
+same template. Bootstrap tab JavaScript must be available in the project.
+
+```latte
+{embed 'path/to/@tabs.latte',
+	tabs: [
+		[
+			id: 'profile',
+			label: 'Profile information',
+			heading: 'Profile information',
+			description: 'Update the name and email address used for your account.',
+			block: 'profileInfo',
+		],
+		[
+			id: 'password',
+			label: 'Change password',
+			heading: 'Change password',
+			description: 'Use a strong password to keep your account secure.',
+			block: 'changePassword',
+		],
+	],
+	active: 'profile',
+	class: 'card',
+	headerClass: 'px-3 pt-3',
+	contentClass: 'p-4'
+}
+	{block profileInfo}
+		{control profile}
+	{/block}
+
+	{block changePassword}
+		{control password}
+	{/block}
+{/embed}
+```
+
+Each tab item supports:
+- `id`: unique tab identifier.
+- `label`: translated tab label.
+- `block`: block name rendered as tab content.
+- `class`: optional class for the tab pane.
+- `heading`: optional translated heading above the tab content.
+- `description`: optional translated description below the heading.
+- `headingClass`: optional heading class.
+- `descriptionClass`: optional description class.
+
+Widget parameters:
+- `tabs`: list of tab definitions.
+- `active`: active tab id; when omitted, the first tab is active.
+- `class`: optional wrapper class.
+- `headerClass`: optional class for the tabs header.
+- `contentClass`: optional class for the tab content wrapper.
