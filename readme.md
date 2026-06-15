@@ -121,7 +121,7 @@ import { initAppDropdowns } from 'drago-component';
 
 Use the widget in Latte:
 ```latte
-{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', end: true}
+{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', class: 'app-dropdown-navbar', end: true}
 	{block menu}
 		{include item, name: 'Homepage', link: ':Front:Home:'}
 		{include item, name: 'Administration', link: 'Admin:'}
@@ -136,6 +136,22 @@ Available parameters:
 - `icon`: optional Font Awesome icon class.
 - `class`: optional class added to the dropdown wrapper.
 - `end`: aligns the dropdown menu to the right.
+
+Color variants:
+- Default behavior inherits the toggle color from the surrounding layout.
+- `app-dropdown-navbar`: uses Bootstrap navbar color variables.
+- `app-dropdown-body`: uses Bootstrap body color variables.
+
+You can also set custom colors with CSS variables:
+```scss
+.my-dropdown {
+	--app-dropdown-toggle-color: var(--bs-light);
+	--app-dropdown-toggle-hover-color: var(--bs-white);
+	--app-dropdown-menu-bg: var(--bs-dark);
+	--app-dropdown-item-color: var(--bs-light);
+	--app-dropdown-item-hover-color: var(--bs-white);
+}
+```
 
 The widget provides helper blocks:
 - `item`: renders a translated dropdown link.
