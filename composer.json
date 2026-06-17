@@ -1,7 +1,7 @@
 {
 	"name": "drago-ex/component",
 	"type": "library",
-	"description": "Bootstrap components such as modal and offcanvas.",
+	"description": "Collection of Bootstrap components and widgets for Nette Framework.",
 	"license": ["MIT"],
 	"authors": [
 		{

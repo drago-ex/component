@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Drago\Component;
 
 
-/**
- * Bootstrap components such as modal and offcanvas.
- */
+/** Bootstrap components such as modal and offcanvas. */
 trait Component
 {
 	public const string
@@ -15,18 +13,14 @@ trait Component
 		Modal = 'modal';
 
 
-	/**
-	 * Returns a unique ID for the component.
-	 */
+	/** Returns a unique ID for the component. */
 	public function getUniqueIdComponent(string $name): string
 	{
 		return $this->getUniqueId() . $name;
 	}
 
 
-	/**
-	 * Calls the offcanvas component.
-	 */
+	/** Calls the offcanvas component. */
 	public function offCanvasComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Offcanvas);
@@ -38,9 +32,7 @@ trait Component
 	}
 
 
-	/**
-	 * Calls the modal component.
-	 */
+	/** Calls the modal component. */
 	public function modalComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Modal);
@@ -52,9 +44,7 @@ trait Component
 	}
 
 
-	/**
-	 * Closes modal or offcanvas component.
-	 */
+	/** Closes modal or offcanvas component. */
 	public function closeComponent(): void
 	{
 		$this->getPresenter()->payload->close = 'close';
