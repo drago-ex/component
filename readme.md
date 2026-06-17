@@ -101,9 +101,7 @@ Then run `npm install`.
 ```JavaScript
 import { BootstrapComponents } from 'drago-component';
 
-registerNajaExtensions(
-	BootstrapComponents,
-);
+naja.registerExtension(new BootstrapComponents();
 ```
 
 ## Dropdown widget
@@ -115,9 +113,7 @@ compact link-like menu style used by the widget:
 ```JavaScript
 import { BootstrapDropdowns } from 'drago-component';
 
-registerNajaExtensions(
-	BootstrapDropdowns,
-);
+naja.registerExtension(new BootstrapDropdowns();
 ```
 
 Use the widget in Latte:
