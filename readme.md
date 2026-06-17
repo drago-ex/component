@@ -1,4 +1,4 @@
-# Drago Component
+# Drago Components
 
 Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 
@@ -99,29 +99,30 @@ Since the package is installed via Composer, add the following to your `package.
 Then run `npm install`.
 
 ```JavaScript
-import BootstrapComponents from 'drago-component/bootstrap-component';
+import { BootstrapComponents } from 'drago-component';
+
+registerNajaExtensions(
+	BootstrapComponents,
+);
 ```
 
 ## Dropdown widget
-The dropdown widget is a small Latte wrapper for Bootstrap-like dropdown menus. It is useful for compact
+The dropdown widget is a small Latte wrapper for Bootstrap dropdown menus. It is useful for compact
 navigation actions, language switchers, user menus, or theme controls.
 
-Import the JavaScript initializer and SCSS in your frontend entry point:
+Register the dropdown helper in your frontend entry point and import the package SCSS when you want the
+compact link-like menu style used by the widget:
 ```JavaScript
-import { initAppDropdowns } from 'drago-component/dropdown';
-import 'drago-component/styles/dropdown';
+import { BootstrapDropdowns } from 'drago-component';
 
-initAppDropdowns();
-```
-
-You can also import it from the main package entry:
-```JavaScript
-import { initAppDropdowns } from 'drago-component';
+registerNajaExtensions(
+	BootstrapDropdowns,
+);
 ```
 
 Use the widget in Latte:
 ```latte
-{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', class: 'app-dropdown-navbar', end: true}
+{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', menu: 'end'}
 	{block menu}
 		{include item, name: 'Homepage', link: ':Front:Home:'}
 		{include item, name: 'Administration', link: 'Admin:'}
@@ -132,26 +133,18 @@ Use the widget in Latte:
 ```
 
 Available parameters:
-- `name`: dropdown toggle label.
+- `name`: optional dropdown toggle label.
 - `icon`: optional Font Awesome icon class.
-- `class`: optional class added to the dropdown wrapper.
-- `end`: aligns the dropdown menu to the right.
+- `menu`: optional Bootstrap menu alignment suffix, for example `end`, `lg-start`, or `lg-end`.
 
-Color variants:
-- Default behavior inherits the toggle color from the surrounding layout.
-- `app-dropdown-navbar`: uses Bootstrap navbar color variables.
-- `app-dropdown-body`: uses Bootstrap body color variables.
+The `menu` value is appended to the Bootstrap `dropdown-menu-*` class, so `menu: 'end'` renders
+`dropdown-menu-end` and `menu: 'lg-start'` renders `dropdown-menu-lg-start`.
 
-You can also set custom colors with CSS variables:
-```scss
-.my-dropdown {
-	--app-dropdown-toggle-color: var(--bs-light);
-	--app-dropdown-toggle-hover-color: var(--bs-white);
-	--app-dropdown-menu-bg: var(--bs-dark);
-	--app-dropdown-item-color: var(--bs-light);
-	--app-dropdown-item-hover-color: var(--bs-white);
-}
-```
+The widget keeps dropdown behavior on Bootstrap. The package SCSS aligns the toggle icon and label so it
+behaves visually like a compact navbar link.
+
+For custom colors, prefer Bootstrap utilities and variables on your own layout instead of overriding the
+dropdown widget.
 
 The widget provides helper blocks:
 - `item`: renders a translated dropdown link.

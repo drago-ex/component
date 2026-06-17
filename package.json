@@ -5,8 +5,7 @@
   "exports": {
 	".": "./src/Drago/assets/index.js",
 	"./bootstrap-component": "./src/Drago/assets/bootstrap-component.js",
-	"./dropdown": "./src/Drago/assets/dropdown.js",
-	"./styles/dropdown": "./src/Drago/assets/dropdown.scss"
+	"./bootstrap-dropdown": "./src/Drago/assets/bootstrap-dropdown.js"
   },
   "sideEffects": ["**/*.scss"],
   "peerDependencies": {
