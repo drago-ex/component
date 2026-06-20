@@ -13,14 +13,12 @@ trait Component
 		Modal = 'modal';
 
 
-	/** Returns a unique ID for the component. */
 	public function getUniqueIdComponent(string $name): string
 	{
 		return $this->getUniqueId() . $name;
 	}
 
 
-	/** Calls the offcanvas component. */
 	public function offCanvasComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Offcanvas);
@@ -32,7 +30,6 @@ trait Component
 	}
 
 
-	/** Calls the modal component. */
 	public function modalComponent(?string $snippet = null): void
 	{
 		$component = $this->getUniqueIdComponent(self::Modal);
@@ -44,7 +41,6 @@ trait Component
 	}
 
 
-	/** Closes modal or offcanvas component. */
 	public function closeComponent(): void
 	{
 		$this->getPresenter()->payload->close = 'close';

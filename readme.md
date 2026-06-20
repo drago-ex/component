@@ -98,10 +98,10 @@ Since the package is installed via Composer, add the following to your `package.
 ```
 Then run `npm install`.
 
-```JavaScript
+```javascript
 import { BootstrapComponents } from 'drago-component';
 
-naja.registerExtension(new BootstrapComponents();
+naja.registerExtension(new BootstrapComponents());
 ```
 
 ## Dropdown widget
@@ -110,10 +110,10 @@ navigation actions, language switchers, user menus, or theme controls.
 
 Register the dropdown helper in your frontend entry point and import the package SCSS when you want the
 compact link-like menu style used by the widget:
-```JavaScript
+```javascript
 import { BootstrapDropdowns } from 'drago-component';
 
-naja.registerExtension(new BootstrapDropdowns();
+naja.registerExtension(new BootstrapDropdowns());
 ```
 
 Use the widget in Latte:
