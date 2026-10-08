@@ -22,7 +22,10 @@
 		"drago-ex/translator": "Configures Latte translation support for bundled templates using translation macros."
 	},
 	"autoload": {
-		"classmap": ["src/"]
+		"classmap": ["src/"],
+		"psr-4": {
+			"Drago\\": "src"
+		}
 	},
 	"extra": {
 		"drago-tools": {
