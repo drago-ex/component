@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
-	".": "./src/Drago/assets/index.js",
-	"./bootstrap-component": "./src/Drago/assets/bootstrap-component.js",
-	"./bootstrap-dropdown": "./src/Drago/assets/bootstrap-dropdown.js"
+	".": "./src/assets/index.js",
+	"./bootstrap-component": "./src/assets/bootstrap-component.js",
+	"./bootstrap-dropdown": "./src/assets/bootstrap-dropdown.js"
   },
   "sideEffects": ["**/*.scss"],
   "peerDependencies": {
