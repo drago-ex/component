@@ -1,15 +1,15 @@
-import Dropdown from "bootstrap/js/dist/dropdown";
+import Dropdown from 'bootstrap/js/dist/dropdown';
 
 export default class BootstrapDropdowns {
 
 	initialize(naja) {
 		initBootstrapDropdowns();
 
-		document.addEventListener("DOMContentLoaded", () => {
+		document.addEventListener('DOMContentLoaded', () => {
 			initBootstrapDropdowns();
 		});
 
-		naja.snippetHandler.addEventListener("afterUpdate", (e) => {
+		naja.snippetHandler.addEventListener('afterUpdate', (e) => {
 			initBootstrapDropdowns(e.detail.snippet);
 		});
 	}
@@ -23,12 +23,12 @@ export function initBootstrapDropdowns(root = document) {
 				return;
 			}
 
-			toggle.dataset.bootstrapDropdownInitialized = "1";
-			toggle.addEventListener("click", (event) => {
+			toggle.dataset.bootstrapDropdownInitialized = '1';
+			toggle.addEventListener('click', (event) => {
 				event.preventDefault();
 				event.stopPropagation();
 
-				if (!toggle.classList.contains("show")) {
+				if (!toggle.classList.contains('show')) {
 					hideOtherDropdowns(toggle);
 				}
 

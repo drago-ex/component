@@ -1,4 +1,4 @@
-import { Modal, Offcanvas } from "bootstrap";
+import { Modal, Offcanvas } from 'bootstrap';
 
 export default class BootstrapComponents {
 
