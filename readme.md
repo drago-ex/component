@@ -7,6 +7,7 @@ Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 [![Coding Style](https://github.com/drago-ex/component/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/component/actions/workflows/coding-style.yml)
 
 ## Requirements
+
 - PHP >= 8.3
 - Nette Framework
 - Composer
@@ -15,17 +16,20 @@ Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 - Node.js
 
 ## Installation
+
 ```bash
 composer require drago-ex/component
 ```
 
 ## Project files
+
 File copying is handled automatically by [drago-ex/project-tools](https://github.com/drago-ex/project-tools),
 which must be installed in your project. Without it, copy the files manually according to the `copy` section
 in this package's `composer.json`. To skip this package, set `"skip": true` under
 `extra.drago-tools.packages.<package-name>` in your root `composer.json`.
 
 ## Modal and offcanvas
+
 In the `Control` component, use the `Drago\Component\Component` trait.
 
 Passing variables to the template:
@@ -87,6 +91,7 @@ Use the component templates in Latte. If you need to redraw multiple blocks, add
 ```
 
 ## JavaScript setup
+
 Since the package is installed via Composer, add the following to your `package.json` to make the `drago-component` alias available in your bundler:
 ```json
 {
@@ -105,6 +110,7 @@ naja.registerExtension(new BootstrapComponents());
 ```
 
 ## Dropdown widget
+
 The dropdown widget is a small Latte wrapper for Bootstrap dropdown menus. It is useful for compact
 navigation actions, language switchers, user menus, or theme controls.
 
@@ -147,6 +153,7 @@ The widget provides helper blocks:
 - `divider`: renders a dropdown divider.
 
 ## Tabs widget
+
 The tabs widget renders Bootstrap tabs from a small configuration array and keeps the content blocks in the
 same template. Bootstrap tab JavaScript must be available in the project.
 
