@@ -1,7 +1,7 @@
 {
 	"name": "drago-ex/component",
-	"type": "library",
 	"description": "Collection of Bootstrap components and widgets for Nette Framework.",
+	"type": "library",
 	"license": ["MIT"],
 	"authors": [
 		{
@@ -14,18 +14,21 @@
 		"nette/application": "^3.1",
 		"latte/latte": "^3.1"
 	},
+	"suggest": {
+		"drago-ex/translator": "Configures Latte translation support for bundled templates using translation macros."
+	},
 	"require-dev": {
 		"tracy/tracy": "^2.10",
 		"phpstan/phpstan-nette": "^2.0"
-	},
-	"suggest": {
-		"drago-ex/translator": "Configures Latte translation support for bundled templates using translation macros."
 	},
 	"autoload": {
 		"classmap": ["src/"],
 		"psr-4": {
 			"Drago\\": "src"
 		}
+	},
+	"scripts": {
+		"phpstan": "phpstan analyse"
 	},
 	"extra": {
 		"drago-tools": {
@@ -35,8 +38,5 @@
 				}
 			}
 		}
-	},
-	"scripts": {
-		"phpstan": "phpstan analyse"
 	}
 }
