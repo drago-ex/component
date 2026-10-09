@@ -1,19 +1,19 @@
 {
-  "name": "drago-component",
-  "version": "1.0.0",
-  "type": "module",
-  "exports": {
-	".": "./src/assets/index.js",
-	"./bootstrap-component": "./src/assets/bootstrap-component.js",
-	"./bootstrap-dropdown": "./src/assets/bootstrap-dropdown.js"
-  },
-  "sideEffects": ["**/*.scss"],
-  "peerDependencies": {
-	"bootstrap": ">=5.0.0",
-	"naja": ">=3.0.0"
-  },
-  "devDependencies": {
-	"bootstrap": "^5.3.3",
-	"naja": "^3.2.1"
-  }
+	"name": "drago-component",
+	"version": "1.0.0",
+	"type": "module",
+	"exports": {
+		".": "./src/assets/index.js",
+		"./bootstrap-component": "./src/assets/bootstrap-component.js",
+		"./bootstrap-dropdown": "./src/assets/bootstrap-dropdown.js"
+	},
+	"sideEffects": ["**/*.scss"],
+	"devDependencies": {
+		"bootstrap": "^5.3.3",
+		"naja": "^3.2.1"
+	},
+	"peerDependencies": {
+		"bootstrap": ">=5.0.0",
+		"naja": ">=3.0.0"
+	}
 }
