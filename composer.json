@@ -37,6 +37,9 @@
 					"src/Drago/assets/latte": "app/Presentation/Accessory/Widget"
 				}
 			}
+		},
+		"drago-translator": {
+			"translation": "src/Translate"
 		}
 	}
 }
