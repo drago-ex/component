@@ -4,11 +4,12 @@ Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
+[![Tests](https://github.com/drago-ex/component/actions/workflows/tests.yml/badge.svg)](https://github.com/drago-ex/component/actions/workflows/tests.yml)
 [![Coding Style](https://github.com/drago-ex/component/actions/workflows/coding-style.yml/badge.svg)](https://github.com/drago-ex/component/actions/workflows/coding-style.yml)
 
 ## Requirements
 
-- PHP >= 8.3
+- PHP >= 8.3, < 9
 - Nette Framework
 - Composer
 - Bootstrap
