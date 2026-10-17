@@ -39,22 +39,24 @@ $template->offcanvasId = $this->getUniqueIdComponent(self::Offcanvas);
 $template->modalId = $this->getUniqueIdComponent(self::Modal);
 ```
 
-You can then use the `Drago\Component\ModalHandle` and `Drago\Component\OffcanvasHandle` implementations:
+You can then implement the `Drago\Component\ModalHandle` and `Drago\Component\OffcanvasHandle` interfaces.
+The optional argument of `modalComponent()` and `offCanvasComponent()` is the name of a snippet to redraw;
+here it is the `modal` and `offcanvas` snippets from the templates below:
 ```php
 #[Requires(ajax: true)] public function handleOpenModal(): void
 {
-	$this->modalComponent(self::Modal);
+	$this->modalComponent('modal');
 }
 
 
 #[Requires(ajax: true)] public function handleOpenOffcanvas(): void
 {
-	$this->offCanvasComponent(self::Offcanvas);
+	$this->offCanvasComponent('offcanvas');
 }
 ```
 
-
-You can pass the snippet name that should be redrawn, or create your own signal handler and redraw the related snippet manually.
+Attributes on interface methods are not inherited, so repeat `#[Requires(ajax: true)]` in your implementation.
+You can also write your own signal handler and redraw the related snippets manually.
 
 ```php
 #[Requires(ajax: true)] public function handleOpenModalWindow(): void
@@ -115,8 +117,7 @@ naja.registerExtension(new BootstrapComponents());
 The dropdown widget is a small Latte wrapper for Bootstrap dropdown menus. It is useful for compact
 navigation actions, language switchers, user menus, or theme controls.
 
-Register the dropdown helper in your frontend entry point and import the package SCSS when you want the
-compact link-like menu style used by the widget:
+Register the dropdown helper in your frontend entry point:
 ```javascript
 import { BootstrapDropdowns } from 'drago-component';
 
@@ -136,15 +137,14 @@ Use the widget in Latte:
 ```
 
 Available parameters:
-- `name`: optional dropdown toggle label.
+- `name`: dropdown toggle label (required, translated).
 - `icon`: optional Font Awesome icon class.
 - `menu`: optional Bootstrap menu alignment suffix, for example `end`, `lg-start`, or `lg-end`.
 
 The `menu` value is appended to the Bootstrap `dropdown-menu-*` class, so `menu: 'end'` renders
 `dropdown-menu-end` and `menu: 'lg-start'` renders `dropdown-menu-lg-start`.
 
-The widget keeps dropdown behavior on Bootstrap. The package SCSS aligns the toggle icon and label so it
-behaves visually like a compact navbar link.
+The widget keeps dropdown behavior on Bootstrap.
 
 For custom colors, prefer Bootstrap utilities and variables on your own layout instead of overriding the
 dropdown widget.

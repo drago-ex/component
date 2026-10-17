@@ -60,8 +60,8 @@ export default class BootstrapComponents {
 		}
 
 		if (payload.close) {
-			doc.querySelector('.offcanvas.show')?._bsOffcanvas?.hide();
-			doc.querySelector('.modal.show')?._bsModal?.hide();
+			doc.querySelectorAll('.offcanvas.show').forEach(offCanvas => offCanvas._bsOffcanvas?.hide());
+			doc.querySelectorAll('.modal.show').forEach(modal => modal._bsModal?.hide());
 		}
 	}
 }

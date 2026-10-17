@@ -16,6 +16,11 @@ Use this file as package-specific guidance when working in this repository. Keep
 - `.github/`: CI workflows; keep their PHP versions and commands consistent with Composer and the package scripts.
 - `composer.json`: package metadata, dependency constraints, autoloading, and available Composer scripts.
 
+## Key Parts
+- `Drago\Component\Component` trait: `modalComponent()` and `offCanvasComponent()` send the element id in the payload; the optional argument is the snippet to redraw.
+- `ModalHandle` and `OffcanvasHandle` interfaces: attributes on interface methods are not inherited, so implementations repeat `#[Requires(ajax: true)]`.
+- `src/assets/latte`: modal, offcanvas, dropdown, tabs and dismiss-button widgets (rendered in `tests/Component/TemplatesTest.phpt`); `src/assets/*.js`: Naja extensions.
+
 ## Dependencies
 
 Composer constraints describe the package contract. Before changing integration behavior, inspect the source and the actual call sites in this package; do not infer runtime usage solely from dependency declarations.
