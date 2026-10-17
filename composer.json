@@ -11,7 +11,7 @@
 	],
 	"require": {
 		"php": ">=8.3 <9",
-		"nette/application": "^3.1",
+		"nette/application": "^3.2",
 		"latte/latte": "^3.1"
 	},
 	"suggest": {
@@ -44,6 +44,6 @@
 	},
 	"scripts": {
 		"phpstan": "phpstan analyse",
-		"tester": "tester tests -s"
+		"tester": "tester tests -s -C"
 	}
 }
