@@ -1,12 +1,14 @@
 {* https://getbootstrap.com/docs/5.3/components/offcanvas/ *}
 {varType string $offcanvasId}
+{* width of the panel, e.g. 100vw for the whole screen *}
+{default string $size = '61rem'}
 {do $labelId = $offcanvasId . 'Label'}
 {do $offcanvasAttrs = [
 	'class' => 'offcanvas offcanvas-end',
 	'tabindex' => '-1',
 	'id' => $offcanvasId,
 	'aria-labelledby' => $labelId,
-	'style' => 'width: 61rem',
+	'style' => '--bs-offcanvas-width: ' . $size,
 ]}
 
 {do $closeBtnAttrs = [
