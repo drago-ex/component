@@ -17,23 +17,20 @@
 	'data-bs-dismiss' => 'modal',
 ]}
 
-{do $headerTheme = $options['header'] ?? 'none'}
 {do $headerThemes = [
 	'danger' => 'bg-danger text-white',
 	'primary' => 'bg-primary text-white',
 	'success' => 'bg-success text-white',
-	'none' => null,
 ]}
-
-{do $headerTheme = isset($headerThemes[$headerTheme]) ? $headerTheme : 'none'}
+{do $headerTheme = $headerThemes[$options['header'] ?? ''] ?? null}
 
 <div n:attr="$modalAttrs">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
-			<div n:class="modal-header, $headerThemes[$headerTheme]">
+			<div n:class="modal-header, $headerTheme">
 				<h1 class="modal-title fs-5" id="{$labelId}">{block title}{/block}</h1>
-				<button n:class="'btn-close', $headerTheme !== 'none' ? 'btn-close-white'" n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
+				<button n:class="'btn-close', $headerTheme !== null ? 'btn-close-white'" n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
 			</div>
 
 			<div class="modal-body">{block body}{/block}</div>

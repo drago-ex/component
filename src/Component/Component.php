@@ -21,23 +21,13 @@ trait Component
 
 	public function offCanvasComponent(?string $snippet = null): void
 	{
-		$component = $this->getUniqueIdComponent(self::Offcanvas);
-		$this->payloadComponent(self::Offcanvas, $component);
-
-		if ($snippet) {
-			$this->redrawControl($snippet);
-		}
+		$this->openComponent(self::Offcanvas, $snippet);
 	}
 
 
 	public function modalComponent(?string $snippet = null): void
 	{
-		$component = $this->getUniqueIdComponent(self::Modal);
-		$this->payloadComponent(self::Modal, $component);
-
-		if ($snippet) {
-			$this->redrawControl($snippet);
-		}
+		$this->openComponent(self::Modal, $snippet);
 	}
 
 
@@ -47,8 +37,12 @@ trait Component
 	}
 
 
-	private function payloadComponent(string $name, string $component): void
+	/** Sends the element id in the payload, so the JavaScript extension shows it, and redraws the snippet. */
+	private function openComponent(string $name, ?string $snippet): void
 	{
-		$this->getPresenter()->payload->{$name} = $component;
+		$this->getPresenter()->payload->{$name} = $this->getUniqueIdComponent($name);
+		if ($snippet !== null) {
+			$this->redrawControl($snippet);
+		}
 	}
 }

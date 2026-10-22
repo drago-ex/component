@@ -48,6 +48,16 @@ test('The modal renders with its id, label and blocks', function () {
 });
 
 
+test('The modal header has no theme without a known one', function () {
+	foreach (['', ', options: [header: "unknown"]'] as $options) {
+		$html = createLatte('{embed "@modal.latte", modalId: "m"' . $options . '}{/embed}')->renderToString('page');
+		$dom = DomQuery::fromHtml($html);
+		Assert::true($dom->has('div.modal-header[class="modal-header"]'), $options);
+		Assert::false($dom->has('.btn-close-white'), $options);
+	}
+});
+
+
 test('The offcanvas renders with its id and label', function () {
 	$html = createLatte('{embed "@offcanvas.latte", offcanvasId: "panel"}{block title}Panel{/block}{/embed}')
 		->renderToString('page');

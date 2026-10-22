@@ -7,7 +7,7 @@ Use this file as package-specific guidance when working in this repository. Keep
 - **Type**: library
 - **Purpose**: Collection of Bootstrap components and widgets for Nette Framework.
 - **PHP**: >=8.3 <9
-- **Runtime dependencies**: nette/application (^3.1), latte/latte (^3.1)
+- **Runtime dependencies**: nette/application (^3.2), latte/latte (^3.1)
 - **License**: MIT
 
 ## Repository Layout
