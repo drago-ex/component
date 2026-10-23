@@ -1,5 +1,7 @@
 # Drago Components
 
+English | [Čeština](readme.cs.md)
+
 Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
