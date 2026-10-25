@@ -29,7 +29,7 @@ Development dependencies include nette/tester (^2.5), tracy/tracy (^2.10), phpst
 ## Essential Commands
 
 ```bash
-composer tester                 # tester tests -s
+composer tester                 # tester tests -s -C
 composer phpstan                # phpstan analyse
 ```
 
