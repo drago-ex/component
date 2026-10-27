@@ -1,7 +1,5 @@
 # Drago Components
 
-[English](readme.md) | Čeština
-
 Komponenty Bootstrapu jako modální okno, offcanvas, dropdown a záložky.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
