@@ -22,12 +22,10 @@ Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 composer require drago-ex/component
 ```
 
-## Project files
+## Files copied into the project
 
-File copying is handled automatically by [drago-ex/project-tools](https://github.com/drago-ex/project-tools),
-which must be installed in your project. Without it, copy the files manually according to the `copy` section
-in this package's `composer.json`. To skip this package, set `"skip": true` under
-`extra.drago-tools.packages.<package-name>` in your root `composer.json`.
+The files are copied into the project by [drago-ex/project-tools](https://github.com/drago-ex/project-tools),
+as set in `extra.drago-tools` of this package's `composer.json`.
 
 ## Modal and offcanvas
 
