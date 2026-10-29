@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Drago\Component;
 
@@ -10,5 +8,5 @@ use Nette\Application\Attributes\Requires;
 interface OffcanvasHandle
 {
 	#[Requires(ajax: true)]
-	public function handleOpenOffcanvas(): void;
+	function handleOpenOffcanvas(): void;
 }

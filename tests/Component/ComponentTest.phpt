@@ -1,10 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Test: Drago\Component\Component
  */
-
-declare(strict_types=1);
 
 use Drago\Component\Component;
 use Drago\Component\ModalHandle;

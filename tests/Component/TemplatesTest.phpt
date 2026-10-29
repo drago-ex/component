@@ -1,10 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Test: bundled Latte widgets
  */
-
-declare(strict_types=1);
 
 use Latte\Engine;
 use Latte\Loaders\StringLoader;

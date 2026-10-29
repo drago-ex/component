@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Drago\Component;
 
@@ -8,8 +6,7 @@ namespace Drago\Component;
 /** Bootstrap components such as modal and offcanvas. */
 trait Component
 {
-	public const string
-		Offcanvas = 'offcanvas',
+	public const string Offcanvas = 'offcanvas',
 		Modal = 'modal';
 
 
