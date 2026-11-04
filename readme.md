@@ -92,36 +92,10 @@ The offcanvas is 61rem wide; pass `size` to change it, e.g. `size: '100vw'` for 
 {/embed}
 ```
 
-## JavaScript setup
-
-Since the package is installed via Composer, add the following to your `package.json` to make the `drago-component` alias available in your bundler:
-```json
-{
-  "type": "module",
-  "dependencies": {
-    "drago-component": "file:vendor/drago-ex/component"
-  }
-}
-```
-Then run `npm install`.
-
-```javascript
-import { BootstrapComponents } from 'drago-component';
-
-naja.registerExtension(new BootstrapComponents());
-```
-
 ## Dropdown widget
 
 The dropdown widget is a small Latte wrapper for Bootstrap dropdown menus. It is useful for compact
 navigation actions, language switchers, user menus, or theme controls.
-
-Register the dropdown helper in your frontend entry point:
-```javascript
-import { BootstrapDropdowns } from 'drago-component';
-
-naja.registerExtension(new BootstrapDropdowns());
-```
 
 Use the widget in Latte:
 ```latte
@@ -206,3 +180,33 @@ Widget parameters:
 - `class`: optional wrapper class.
 - `headerClass`: optional class for the tabs header.
 - `contentClass`: optional class for the tab content wrapper.
+
+## Assets
+
+Since the package is installed via Composer, add the following to your `package.json` to make the `drago-component` alias available in your bundler:
+```json
+{
+  "type": "module",
+  "dependencies": {
+    "drago-component": "file:vendor/drago-ex/component"
+  }
+}
+```
+Then run `npm install`.
+
+### Modal and offcanvas
+
+```javascript
+import { BootstrapComponents } from 'drago-component';
+
+naja.registerExtension(new BootstrapComponents());
+```
+
+### Dropdown widget
+
+Register the dropdown helper in your frontend entry point:
+```javascript
+import { BootstrapDropdowns } from 'drago-component';
+
+naja.registerExtension(new BootstrapDropdowns());
+```

@@ -92,36 +92,10 @@ Offcanvas je široký 61rem; pro změnu předejte `size`, např. `size: '100vw'`
 {/embed}
 ```
 
-## Nastavení JavaScriptu
-
-Balíček se instaluje přes Composer, proto přidejte do `package.json` následující, aby byl v bundleru dostupný alias `drago-component`:
-```json
-{
-  "type": "module",
-  "dependencies": {
-    "drago-component": "file:vendor/drago-ex/component"
-  }
-}
-```
-Potom spusťte `npm install`.
-
-```javascript
-import { BootstrapComponents } from 'drago-component';
-
-naja.registerExtension(new BootstrapComponents());
-```
-
 ## Widget dropdown
 
 Widget dropdown je malý obal Latte pro rozbalovací menu Bootstrapu. Hodí se pro kompaktní
 navigační akce, přepínače jazyků, uživatelská menu nebo ovládání motivu.
-
-Zaregistrujte pomocníka pro dropdown ve vstupním bodě frontendu:
-```javascript
-import { BootstrapDropdowns } from 'drago-component';
-
-naja.registerExtension(new BootstrapDropdowns());
-```
 
 Použijte widget v Latte:
 ```latte
@@ -206,3 +180,33 @@ Parametry widgetu:
 - `class`: volitelná třída obalu.
 - `headerClass`: volitelná třída hlavičky záložek.
 - `contentClass`: volitelná třída obalu obsahu záložek.
+
+## Assety
+
+Balíček se instaluje přes Composer, proto přidejte do `package.json` následující, aby byl v bundleru dostupný alias `drago-component`:
+```json
+{
+  "type": "module",
+  "dependencies": {
+    "drago-component": "file:vendor/drago-ex/component"
+  }
+}
+```
+Potom spusťte `npm install`.
+
+### Modální okno a offcanvas
+
+```javascript
+import { BootstrapComponents } from 'drago-component';
+
+naja.registerExtension(new BootstrapComponents());
+```
+
+### Widget dropdown
+
+Zaregistrujte pomocníka pro dropdown ve vstupním bodě frontendu:
+```javascript
+import { BootstrapDropdowns } from 'drago-component';
+
+naja.registerExtension(new BootstrapDropdowns());
+```
