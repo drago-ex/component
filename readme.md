@@ -1,6 +1,6 @@
 # Drago Components
 
-Bootstrap components such as modal, offcanvas, dropdown, and tabs.
+Bootstrap modal and offcanvas opened by Nette signals over Naja, and Latte widgets for dropdowns and tabs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
@@ -22,10 +22,8 @@ Bootstrap components such as modal, offcanvas, dropdown, and tabs.
 composer require drago-ex/component
 ```
 
-## Files copied into the project
-
-The files are copied into the project by [drago-ex/project-tools](https://github.com/drago-ex/project-tools),
-as set in `extra.drago-tools` of this package's `composer.json`.
+[Project Tools](https://github.com/drago-ex/project-tools) copies the Latte widgets `@modal`, `@offcanvas`, `@tabs`,
+`@dropdown` and `@dismiss-button` into `app/Presentation/Accessory/Widget`, where you adapt them.
 
 ## Modal and offcanvas
 
@@ -54,7 +52,7 @@ here it is the `modal` and `offcanvas` snippets from the templates below:
 ```
 
 Attributes on interface methods are not inherited, so repeat `#[Requires(ajax: true)]` in your implementation.
-You can also write your own signal handler and redraw the related snippets manually.
+`closeComponent()` closes the open modal or offcanvas (e.g. after a saved form). You can also write your own signal handler and redraw the related snippets manually.
 
 ```php
 #[Requires(ajax: true)] public function handleOpenModalWindow(): void
@@ -117,11 +115,6 @@ Available parameters:
 The `menu` value is appended to the Bootstrap `dropdown-menu-*` class, so `menu: 'end'` renders
 `dropdown-menu-end` and `menu: 'lg-start'` renders `dropdown-menu-lg-start`.
 
-The widget keeps dropdown behavior on Bootstrap.
-
-For custom colors, prefer Bootstrap utilities and variables on your own layout instead of overriding the
-dropdown widget.
-
 The widget provides helper blocks:
 - `item`: renders a translated dropdown link.
 - `divider`: renders a dropdown divider.
@@ -183,7 +176,7 @@ Widget parameters:
 
 ## Assets
 
-Since the package is installed via Composer, add the following to your `package.json` to make the `drago-component` alias available in your bundler:
+Add the Composer package as a local npm dependency in `package.json` (Drago Project installs it by itself), so the bundler knows `drago-component`:
 ```json
 {
   "type": "module",
