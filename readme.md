@@ -1,6 +1,7 @@
 # Drago Components
 
-Bootstrap modal and offcanvas opened by Nette signals over Naja, and Latte widgets for dropdowns and tabs.
+Bootstrap modal and offcanvas opened by Nette signals over Naja, Latte widgets for dropdowns and tabs, and a CSS
+tooltip for icon buttons.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
@@ -174,6 +175,21 @@ Widget parameters:
 - `headerClass`: optional class for the tabs header.
 - `contentClass`: optional class for the tab content wrapper.
 
+## Tooltip
+
+A tooltip of pure CSS for buttons with an icon only: the text of `aria-label` is shown on hover and keyboard focus,
+in the colors of the button, and screen readers read it as the name of the button. It needs no JavaScript, so it
+works in AJAX snippets too.
+
+```html
+<a href="..." class="btn btn-xs btn-danger" aria-label="Delete" data-tooltip>
+	<i class="fa-solid fa-trash" aria-hidden="true"></i>
+</a>
+```
+
+`data-tooltip="left"` shows it on the left, e.g. at the right edge of a table. The actions of
+[drago-ex/datagrid](https://github.com/drago-ex/datagrid) with an icon use it.
+
 ## Assets
 
 Add the Composer package as a local npm dependency in `package.json` (Drago Project installs it by itself), so the bundler knows `drago-component`:
@@ -202,4 +218,10 @@ Register the dropdown helper in your frontend entry point:
 import { BootstrapDropdowns } from 'drago-component';
 
 naja.registerExtension(new BootstrapDropdowns());
+```
+
+### Tooltip
+
+```scss
+@import 'drago-component/styles/tooltip';
 ```

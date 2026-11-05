@@ -1,0 +1,56 @@
+//
+// Tooltip of pure CSS, for buttons with an icon only: the text of aria-label shown on hover and keyboard focus,
+// in the colors of its button (Bootstrap --bs-btn-*), so it needs no JavaScript and survives Naja snippets.
+// <a class="btn btn-xs btn-danger" aria-label="Delete" data-tooltip><i class="fa-solid fa-trash"></i></a>
+// data-tooltip="left" shows it on the left, e.g. at the right edge of a table.
+//
+[data-tooltip] {
+	position: relative;
+
+	&::after {
+		content: attr(aria-label);
+		position: absolute;
+		bottom: calc(100% + .375rem);
+		left: 50%;
+		z-index: 1080;
+		padding: .25rem .5rem;
+		border-radius: var(--bs-border-radius-sm);
+		background-color: var(--bs-btn-bg, var(--bs-emphasis-color));
+		color: var(--bs-btn-color, var(--bs-body-bg));
+		font-size: .75rem;
+		font-weight: 400;
+		line-height: 1.2;
+		white-space: nowrap;
+		pointer-events: none;
+		opacity: 0;
+		transform: translate(-50%, .25rem);
+		transition: opacity .15s ease-in-out, transform .15s ease-in-out;
+	}
+
+	&:hover::after,
+	&:focus-visible::after {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+[data-tooltip='left'] {
+	&::after {
+		top: 50%;
+		bottom: auto;
+		left: auto;
+		right: calc(100% + .375rem);
+		transform: translate(-.25rem, -50%);
+	}
+
+	&:hover::after,
+	&:focus-visible::after {
+		transform: translate(0, -50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-tooltip]::after {
+		transition: none;
+	}
+}
