@@ -20,7 +20,7 @@ Use this file as package-specific guidance when working in this repository. Keep
 - `Drago\Component\Component` trait: `modalComponent()` and `offCanvasComponent()` send the element id in the payload; the optional argument is the snippet to redraw.
 - `ModalHandle` and `OffcanvasHandle` interfaces: attributes on interface methods are not inherited, so implementations repeat `#[Requires(ajax: true)]`.
 - `src/assets/latte`: modal, offcanvas, dropdown, tabs and dismiss-button widgets (rendered in `tests/Component/TemplatesTest.phpt`); `src/assets/*.js`: Naja extensions.
-- `src/assets/tooltip.scss` (export `drago-component/styles/tooltip`): a CSS-only tooltip for icon buttons, `[data-tooltip]` shows `attr(aria-label)` in `::after` with the colors of its button (`--bs-btn-bg`, `--bs-btn-color`, falling back to body colors), on hover and `:focus-visible`; `data-tooltip="left"` for the right edge of tables. No JavaScript on purpose (survives Naja snippets) and no npm dependency (cooltipz-css was considered and rejected). A pseudo-element is clipped by an ancestor with `overflow: hidden/auto`.
+- The widgets are written in the classes of compostrap: the modal options `theme` (`modal-status`, a colored line) and `confirm` (`modal-confirm` with an icon), the dismiss button with a `label`. The styles are the module `dialogs` of compostrap; the package ships no CSS (the CSS tooltip `data-tooltip` is the module `tooltip` of compostrap).
 
 ## Dependencies
 

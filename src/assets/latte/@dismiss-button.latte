@@ -1,5 +1,5 @@
-{define buttonDismiss, string $type, ?string $class = null}
-	<button type="button" n:class="$class, 'btn btn-secondary me-1'" data-bs-dismiss="{$type}">
-		{_'Close'}
+{define buttonDismiss, string $type, ?string $class = null, string $label = 'Close'}
+	<button type="button" n:class="$class ?: 'btn btn-secondary'" data-bs-dismiss="{$type}">
+		{_$label}
 	</button>
 {/define}

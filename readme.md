@@ -1,7 +1,7 @@
 # Drago Components
 
-Bootstrap modal and offcanvas opened by Nette signals over Naja, Latte widgets for dropdowns and tabs, and a CSS
-tooltip for icon buttons.
+Bootstrap modal and offcanvas opened by Nette signals over Naja, and Latte widgets for dropdowns and tabs, in the look
+of [compostrap](https://github.com/compostrap/compostrap).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/drago-ex/component/blob/main/license)
 [![PHP version](https://badge.fury.io/ph/drago-ex%2Fcomponent.svg)](https://badge.fury.io/ph/drago-ex%2Fcomponent)
@@ -14,6 +14,7 @@ tooltip for icon buttons.
 - Nette Framework
 - Composer
 - Bootstrap
+- [compostrap](https://github.com/compostrap/compostrap) (the styles of the modal)
 - Naja
 - Node.js
 
@@ -64,7 +65,8 @@ Attributes on interface methods are not inherited, so repeat `#[Requires(ajax: t
 ```
 
 Use the component templates in Latte. If you need to redraw multiple blocks, add additional snippets inside the embedded template.
-The offcanvas is 61rem wide; pass `size` to change it, e.g. `size: '100vw'` for the whole screen.
+The offcanvas is 61rem wide; pass `size` to change it, e.g. `size: '100vw'` for the whole screen. Its block `header`
+stands between the title and the close button, e.g. for tabs of the panel.
 ```latte
 <a n:href="openOffcanvas!" class="ajax" data-naja-history="off">Open Offcanvas</a>
 {embed 'path/to/@offcanvas.latte', offcanvasId: $offcanvasId}
@@ -91,6 +93,19 @@ The offcanvas is 61rem wide; pass `size` to change it, e.g. `size: '100vw'` for 
 {/embed}
 ```
 
+The modal takes `options`: `theme` (`danger`, `warning`, `success`, `info`, `primary`) draws a colored line at its top,
+`confirm: true` makes it a narrow centered confirmation with a large icon in that color (`icon` replaces the icon):
+
+```latte
+{embed 'path/to/@modal.latte', modalId: $modalId, options: [theme: 'danger', confirm: true]}
+	{block title}Delete the article?{/block}
+	...
+{/embed}
+```
+
+The dismiss button says Close; `label` gives it another text, e.g. `{include buttonDismiss, type: 'modal', label: 'Cancel'}`
+in a confirmation.
+
 ## Dropdown widget
 
 The dropdown widget is a small Latte wrapper for Bootstrap dropdown menus. It is useful for compact
@@ -98,7 +113,7 @@ navigation actions, language switchers, user menus, or theme controls.
 
 Use the widget in Latte:
 ```latte
-{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'fa-solid fa-bars', menu: 'end'}
+{embed 'path/to/@dropdown.latte', name: 'Menu', icon: 'bi bi-list', menu: 'end'}
 	{block menu}
 		{include item, name: 'Homepage', link: ':Front:Home:'}
 		{include item, name: 'Administration', link: 'Admin:'}
@@ -175,21 +190,6 @@ Widget parameters:
 - `headerClass`: optional class for the tabs header.
 - `contentClass`: optional class for the tab content wrapper.
 
-## Tooltip
-
-A tooltip of pure CSS for buttons with an icon only: the text of `aria-label` is shown on hover and keyboard focus,
-in the colors of the button, and screen readers read it as the name of the button. It needs no JavaScript, so it
-works in AJAX snippets too.
-
-```html
-<a href="..." class="btn btn-xs btn-danger" aria-label="Delete" data-tooltip>
-	<i class="fa-solid fa-trash" aria-hidden="true"></i>
-</a>
-```
-
-`data-tooltip="left"` shows it on the left, e.g. at the right edge of a table. The actions of
-[drago-ex/datagrid](https://github.com/drago-ex/datagrid) with an icon use it.
-
 ## Assets
 
 Add the Composer package as a local npm dependency in `package.json` (Drago Project installs it by itself), so the bundler knows `drago-component`:
@@ -211,6 +211,12 @@ import { BootstrapComponents } from 'drago-component';
 naja.registerExtension(new BootstrapComponents());
 ```
 
+The look of the modal (the colored line, the confirmation) comes from the module `dialogs` of compostrap:
+
+```scss
+@import 'compostrap/src/scss/dialogs';
+```
+
 ### Dropdown widget
 
 Register the dropdown helper in your frontend entry point:
@@ -218,10 +224,4 @@ Register the dropdown helper in your frontend entry point:
 import { BootstrapDropdowns } from 'drago-component';
 
 naja.registerExtension(new BootstrapDropdowns());
-```
-
-### Tooltip
-
-```scss
-@import 'drago-component/styles/tooltip';
 ```

@@ -1,4 +1,5 @@
-{* https://getbootstrap.com/docs/5.3/components/offcanvas/ *}
+{* https://getbootstrap.com/docs/5.3/components/offcanvas/; the block header stands between the title and the close
+   button, e.g. for the tabs of the panel (a btn-group with role="tablist") *}
 {varType string $offcanvasId}
 {* width of the panel, e.g. 100vw for the whole screen *}
 {default string $size = '61rem'}
@@ -20,7 +21,8 @@
 <div n:attr="$offcanvasAttrs">
 
 	<div class="offcanvas-header bg-body-tertiary">
-		<h5 id="{$labelId}">{block title}{/block}</h5>
+		<h5 id="{$labelId}" class="mb-0">{block title}{/block}</h5>
+		{block header}{/block}
 		<button n:attr="$closeBtnAttrs" aria-label="{_'Close'}"></button>
 	</div>
 

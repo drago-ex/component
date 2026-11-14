@@ -1,4 +1,7 @@
-{* https://getbootstrap.com/docs/5.3/components/modal/ *}
+{* https://getbootstrap.com/docs/5.3/components/modal/ in the look of the module dialogs of compostrap.
+   options: theme (danger, primary, success, info, warning) draws a colored line at the top of the modal;
+   confirm (bool) makes it a narrow centered confirmation with a large icon in that color and buttons of the same width;
+   icon replaces the icon of a confirmation. *}
 {varType string $modalId}
 {default array $options = []}
 {do $labelId = $modalId . 'Label'}
@@ -14,26 +17,41 @@
 
 {do $modalCloseBtnAttrs = [
 	'type' => 'button',
+	'class' => 'btn-close',
 	'data-bs-dismiss' => 'modal',
 ]}
 
-{do $headerThemes = [
-	'danger' => 'bg-danger text-white',
-	'primary' => 'bg-primary text-white',
-	'success' => 'bg-success text-white',
+{do $icons = [
+	'danger' => 'bi bi-exclamation-triangle',
+	'warning' => 'bi bi-exclamation-circle',
+	'success' => 'bi bi-check-circle',
+	'info' => 'bi bi-info-circle',
+	'primary' => 'bi bi-question-circle',
 ]}
-{do $headerTheme = $headerThemes[$options['header'] ?? ''] ?? null}
+{do $theme = isset($icons[$options['theme'] ?? '']) ? $options['theme'] : null}
+{do $confirm = (bool) ($options['confirm'] ?? false)}
+{do $icon = $options['icon'] ?? $icons[$theme ?? 'primary']}
 
 <div n:attr="$modalAttrs">
-	<div class="modal-dialog">
+	<div n:class="modal-dialog, $confirm ? 'modal-dialog-centered modal-confirm', $theme ? 'theme-' . $theme">
 		<div class="modal-content">
+			<div n:if="$theme" class="modal-status"></div>
 
-			<div n:class="modal-header, $headerTheme">
-				<h1 class="modal-title fs-5" id="{$labelId}">{block title}{/block}</h1>
-				<button n:class="'btn-close', $headerTheme !== null ? 'btn-close-white'" n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
-			</div>
+			{if $confirm}
+				<button n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
+				<div class="modal-body">
+					<i class="{$icon} modal-confirm-icon" aria-hidden="true"></i>
+					<h2 class="modal-title" id="{$labelId}">{block title}{/block}</h2>
+					{block body}{/block}
+				</div>
+			{else}
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="{$labelId}">{include title}</h1>
+					<button n:attr="$modalCloseBtnAttrs" aria-label="{_'Close'}"></button>
+				</div>
+				<div class="modal-body">{include body}</div>
+			{/if}
 
-			<div class="modal-body">{block body}{/block}</div>
 			<div class="modal-footer">{block footer}{/block}</div>
 
 		</div>
