@@ -125,7 +125,7 @@ Use the widget in Latte:
 
 Available parameters:
 - `name`: dropdown toggle label (required, translated).
-- `icon`: optional Font Awesome icon class.
+- `icon`: optional icon class, for example `bi bi-person` of Bootstrap Icons.
 - `menu`: optional Bootstrap menu alignment suffix, for example `end`, `lg-start`, or `lg-end`.
 
 The `menu` value is appended to the Bootstrap `dropdown-menu-*` class, so `menu: 'end'` renders
