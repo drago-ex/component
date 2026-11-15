@@ -85,7 +85,13 @@ test('The block header of the offcanvas stands between its title and the close b
 	$html = createLatte('{embed "@offcanvas.latte", offcanvasId: "panel"}{block title}Panel{/block}{block header}<div class="tabs"></div>{/block}{/embed}')
 		->renderToString('page');
 
-	Assert::true(DomQuery::fromHtml($html)->has('.offcanvas-header h5#panelLabel + .tabs + .btn-close'));
+	// the order of the children, read without the sibling combinator `+` (DomQuery supports it only on PHP 8.4+)
+	$children = [];
+	foreach (DomQuery::fromHtml($html)->find('.offcanvas-header')[0]->children() as $child) {
+		$children[] = (string) ($child['id'] ?? $child['class']);
+	}
+
+	Assert::same(['panelLabel', 'tabs', 'btn-close text-reset'], $children);
 });
 
 
