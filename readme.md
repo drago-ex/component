@@ -211,7 +211,8 @@ import { BootstrapComponents } from 'drago-component';
 naja.registerExtension(new BootstrapComponents());
 ```
 
-The look of the modal (the colored line, the confirmation) comes from the module `dialogs` of compostrap:
+The look of the modal (the colored line, the confirmation) comes from the module `dialogs` of compostrap (Drago
+Project already imports it in `assets/core/base.scss`):
 
 ```scss
 @import 'compostrap/src/scss/dialogs';
